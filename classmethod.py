@@ -12,11 +12,23 @@ class Matrix:
         for entry in self.mainMatrix:
             print(entry)
 
+    def determinant(self):
+        pass
+
+    def inverse(self):
+        pass
+
+    def transpose(self):
+        pass
+
+    def adjoint(self):
+        pass
+
     pass
 
 
 class MatrixMethod(Matrix):
-    def det(self):
+    def determinant(self):
         entry = function.unpack(self.mainMatrix)
         det = entry[0] * entry[3] - entry[1] * entry[2]
         return det
@@ -24,7 +36,7 @@ class MatrixMethod(Matrix):
 
     def inverse(self):
         entry = function.unpack(self.mainMatrix)
-        div = 1 / self.det()
+        div = 1 / self.determinant()
         inv = [[entry[3], -entry[1]], [-entry[2], entry[0]]]
         # print(len(inv))
         for x in range(len(inv)):
