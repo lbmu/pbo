@@ -1,5 +1,6 @@
+# main program, dibuat pertama, dimainin terakhir
 import function
-import classmethod as matrix
+import matrix2 as matrix
 import menu
 
 
@@ -12,7 +13,7 @@ while options == 'y':
     size = int(input('Size of square matrix : '))
     matrixValue = function.inputMain(size)
     function.unpack(matrixValue)
-    operations = matrix.MatrixMethod(matrixValue, size)
+    operations = matrix.TwoByTwoMethod(matrixValue, size)
     menu.main(options)
     while options != 'e':
         options = input('Method\n'

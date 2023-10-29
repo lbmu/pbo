@@ -1,6 +1,9 @@
-# from main import size
+# blok fungsi santai dulu ga sih
+import math
+
 
 def unpack(mat):
+    # list comprehension
     unpackedMat = [element for row in mat for element in row]
     # print()
     return unpackedMat
@@ -38,7 +41,18 @@ def inputVector(size):
         vector = []
         print('Input : ')
         for i in range(size):
-            x = int(input())
-            vector.append(x)
+            vector.append(int(input()))
         return vector
     pass
+
+
+def notation(vect):
+    value = 0
+    for x in range(len(vect)):
+        value += vect[x] ** 2
+        pass
+    return math.sqrt(value)
+    pass
+
+
+
