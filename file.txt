@@ -1,0 +1,8 @@
+Nama Mahasiswa : Yoz
+NIM : 0189
+UTS Mahasiswa : 10.0
+UAS Mahasiswa : 20.0
+Nama Mahasiswa : yoz
+NIM : 0189
+UTS Mahasiswa : 20.0
+UAS Mahasiswa : 10.0

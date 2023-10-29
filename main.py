@@ -8,6 +8,7 @@ options = 'y'
 # newMatrixStatus = None
 while options == 'y':
 
+    menu.main()
     size = int(input('Size of square matrix : '))
     matrixValue = function.inputMain(size)
     function.unpack(matrixValue)

@@ -8,24 +8,37 @@ def unpack(mat):
 
 
 def inputMain(size):
-    matrixDef = []
+    value = []
     print('Matrix A\n-----')
     for i in range(size):
         rowValue = []
         for j in range(size):
             rowValue.append(float(input(f'Entry {i} {j} = ')))
-        matrixDef.append(rowValue)
-    return matrixDef
+        value.append(rowValue)
+    return value
     pass
 
 
 def inputAux(size):
-    matrixOp = []
+    value = []
     print(f'Matrix B')
     for i in range(size):
         rowValue = []
         for j in range(size):
             rowValue.append(float(input(f'Entry {i} {j} = ')))
-        matrixOp.append(rowValue)
-    return matrixOp
+        value.append(rowValue)
+    return value
+    pass
+
+
+def inputVector(size):
+    if size > 3:
+        print('4D vector currently unavailable')
+    else:
+        vector = []
+        print('Input : ')
+        for i in range(size):
+            x = int(input())
+            vector.append(x)
+        return vector
     pass

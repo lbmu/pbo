@@ -1,5 +1,6 @@
 # from main import calStatus
 import function
+# import abc
 
 
 class Matrix:
@@ -12,6 +13,7 @@ class Matrix:
         for entry in self.mainMatrix:
             print(entry)
 
+    # @abstractmethod
     def determinant(self):
         pass
 
