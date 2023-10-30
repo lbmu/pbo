@@ -1,2 +1,2 @@
 # pbo
-# yes
+# file yamg makruh dipake : classmethod, quiz 2
