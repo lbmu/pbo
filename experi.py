@@ -4,22 +4,24 @@
 import function
 
 i = 0
-m = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
+m = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 # a = m[0][i+1]
 # print(len(m))
 det = 0
 res = 1
-for i in range(len(m)):
-    for j in range(2):
-        m[i].append(m[i][j])  # ganggu (asalnya ada error ganggu yang ga ngaruh ke program)
 
-for i in range(len(m)):
-    for j in range(len(m)):
-        if j < len(m):
-            res *= m[i][i]
-            pass
+for x in range(3):
+    list = []
+    for i in range(len(m)):
+        res *= m[i][i]
+        # det += res
+        list.append(res)
+        print(res)
         pass
-    print(res)
+    pass
+    # print(res)
 for x in m:
     print(x)
 print(det)
+
+
