@@ -55,4 +55,10 @@ def notation(vect):
     pass
 
 
-
+def detstep1(m):
+    for i in range(len(m)):
+        for j in range(2):
+            m[i].append(m[i][j])  # ganggu (asalnya ada error ganggu yang ga ngaruh ke program)
+            pass
+        pass
+    return

@@ -27,19 +27,19 @@ class VectorOperations(Vector):
         super().__init__(value1, value2)
         pass
 
-    def dotProduct(self):
+    def dotProduct(self, size):
         dot = 0
-        for x in range(3):
+        for x in range(size):
             dot += self.vectorA[x]*self.vectorB[x]
         return dot
         pass
 
-    '''def crossProduct(self):
+    def crossProduct(self):
         i = []
         j = []
         k = []
-
-        pass'''
+        return print('lemes guys')
+        pass
 
     def cosAngle(self):
         num = self.dotProduct()
