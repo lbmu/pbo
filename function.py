@@ -61,4 +61,12 @@ def detstep1(m):
             m[i].append(m[i][j])  # ganggu (asalnya ada error ganggu yang ga ngaruh ke program)
             pass
         pass
-    return
+    return m
+
+
+def detVector(v1, v2):
+    for y in range(2):
+        v1.append(v1[y])
+        v2.append(v2[y])
+    cross = [v1, v2]
+    return cross

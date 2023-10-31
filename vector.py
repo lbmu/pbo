@@ -10,7 +10,7 @@ class Vector:
         pass
 
     def printVector(self):
-        print('< ', end='')
+        print('< ')
         for x in self.vectorA:
             print(x, end=', ')
         print('>')
@@ -35,14 +35,17 @@ class VectorOperations(Vector):
         pass
 
     def crossProduct(self):
+        for x in range(2):
+            self.vectorA.append(self.vectorA[x])
+            self.vectorB.append(self.vectorB[x])
         i = []
         j = []
         k = []
         return print('lemes guys')
         pass
 
-    def cosAngle(self):
-        num = self.dotProduct()
+    def cosAngle(self, size):
+        num = self.dotProduct(size)
         den = function.notation(self.vectorA) * function.notation(self.vectorB)
         return math.acos(num / den)  # ini gimana biar bentuknya derajat ya
         pass

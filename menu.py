@@ -33,7 +33,7 @@ def menuVector():
                 print(vect.crossProduct())
                 pass
             elif vectorOpt == 'a':
-                print(vect.cosAngle())
+                print(vect.cosAngle(sizeV))
                 pass
             pass
         opt = input('Input New Vector? (y/n)').lower()
@@ -60,29 +60,4 @@ def menuMatrix2():
             pass
         opt = input('Input New Matrix? (y/n)').lower()
         pass
-
     pass
-
-
-# opt buat yang paling luar (keinginan user untuk masih ingin menginput)
-def main(opt):
-    while opt != 'n':
-        vmopt = None  # Pilihan input matriks atau vektor
-        vmopt = int(input('Input\n'
-                          '[1] Vector\n'
-                          '[2] 2 x 2 Matrix\n'
-                          '[3] 3 x 3 Matrix\n'
-                          ))
-    # ini buat vector
-        if vmopt == 1:
-            menuVector()
-    # ini buat matrix 2 x 2
-        elif vmopt == 2:
-            pass
-            # ini buat matrix 3 x 3
-        elif vmopt == 3:
-            pass
-        opt = input('Reinput from main Matrix and Vector?(y/n) : ').lower()
-        pass
-
-main(input('Opt = '))

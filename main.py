@@ -1,74 +1,22 @@
-# main program, dibuat pertama, dimainin terakhir
-import function
-import matrix2 as matrix
 import menu
 
-
-# masterOptions = None
-options = 'y'
-# newMatrixStatus = None
-while options == 'y':
-
-    menu.main()
-    size = int(input('Size of square matrix : '))
-    matrixValue = function.inputMain(size)
-    function.unpack(matrixValue)
-    operations = matrix.TwoByTwoMethod(matrixValue, size)
-    menu.main(options)
-    while options != 'e':
-        options = input('Method\n'
-                        '[P]rint Matrix | '
-                        '[D]eterminant | '
-                        '[I]nverse | '
-                        '[T]transpose | '
-                        '[O]perations | '
-                        '[E]xit | '
-                        ' = '
-                        ).lower()
-        if options == 'p':
-            operations.printMatrix()
-        elif options == 'd':
-            if size == 2:
-                print('Matrix Determinant : ', operations.determinant())
-            else:
-                print('2 x 2 Matrix only')
-                pass
-            pass
-        elif options == 'i':
-            if size != 2:
-                print('Ngawur')
-                pass
-            else:
-                for verse in operations.inverse():
-                    print(verse)
-            pass
-        elif options == 't':
-            for pose in operations.transpose():
-                print(pose)
-        elif options == 'o':
-            # Status Operations, sentinel for Main decisions
-            statOp = input('[B]asic | [M]ultiplication | [E]xit : ')
-            while statOp != 'e':
-                calculate = matrix.MatrixOperations(matrixValue, function.inputAux(size), size)
-                # calculate Status, sentinel for AM function decisions
-                calStatus = input('[A]ddition | [S]ubstraction | [E]xit:').lower()
-                while calStatus == 'b':
-                    if calStatus == 'a':
-                        print(f'Matrix A + B')
-                        for i in calculate.addition(calStatus):
-                            print(i)
-                    elif calStatus == 's':
-                        print(f'Matrix A - B')
-                        for i in calculate.addition(calStatus):
-                            print(i)
-                while calStatus == 'm':
-                    if calStatus == 'd':
-                        print(f'Matrix A + B')
-                        for i in calculate.multiplication(calStatus):
-                            print(i)
-                    elif calStatus == 'c':
-                        print(f'Matrix A - B')
-                        for i in calculate.multiplication(calStatus):
-                            print(i)
-                    calStatus = input('[D]ot Product| [C]ross Product | [E]xit:').lower()
-    options = input('Input new matrix instead?[y/n] ').lower()
+# opt buat yang paling luar (keinginan user untuk masih ingin menginput)
+opt = None
+while opt != 'n':
+    vmopt = int(input('Input\n'
+                      '[1] Vector\n'
+                      '[2] 2 x 2 Matrix\n'
+                      '[3] 3 x 3 Matrix\n'
+                      ))
+    # ini buat vector
+    if vmopt == 1:
+        menu.menuVector()
+    # ini buat matrix 2 x 2
+    elif vmopt == 2:
+        menu.menuMatrix2()
+        pass
+        # ini buat matrix 3 x 3
+    elif vmopt == 3:
+        pass
+    opt = input('Reinput from main Matrix and Vector?(y/n) : ').lower()
+    pass
