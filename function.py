@@ -12,7 +12,7 @@ def unpack(mat):
 
 def inputMain(size):
     value = []
-    print('Matrix A\n-----')
+    print(f'Matrix A ({size} x {size})\n-----')
     for i in range(size):
         rowValue = []
         for j in range(size):

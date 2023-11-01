@@ -44,9 +44,7 @@ def menuVector():
 def menuMatrix2():
     opt = None
     while opt != 'n':
-        sizeM = int(input('Size of The 2 x 2 Matrix : '))
-        mTwo = m2.TwoByTwoMethod(f.inputMain(sizeM), sizeM)
-        m2Opt = None
+        mTwo = m2.TwoByTwoMethod(f.inputMain(2), 2)
         m2Opt = input('Method\n'
                         '[P]rint Matrix | '
                         '[D]eterminant | '
