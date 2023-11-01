@@ -4,19 +4,16 @@ import function
 from abc import ABC, abstractmethod
 
 
-class Matrix:
+class Matrix(ABC):
     def __init__(self, matrix, sizematrix):
         self.mainMatrix = matrix
         self.size = sizematrix
         self.matrox = function.unpack(self.mainMatrix)
 
+    @abstractmethod
     def printMatrix(self):
-        for entry in self.mainMatrix:
-            print(entry)
-    pass
+        pass
 
-
-class Abstract(ABC):
     @abstractmethod
     def determinant(self):
         pass
@@ -29,8 +26,20 @@ class Abstract(ABC):
     def transpose(self):
         pass
 
+    @abstractmethod
+    def writeToTxt(self):
+        pass
 
-class TwoByTwoMethod(Matrix, Abstract):
+    pass
+
+
+class TwoByTwoMethod(Matrix):
+
+    def printMatrix(self):
+        for entry in self.mainMatrix:
+            print(entry)
+        pass
+
     def determinant(self):
         entry = self.matrox
         det = entry[0] * entry[3] - entry[1] * entry[2]
@@ -59,11 +68,19 @@ class TwoByTwoMethod(Matrix, Abstract):
         transpose = [trans[:2], trans[2:]]
         return transpose
 
+    def writeToTxt(self):
+        pass
 
-class MatrixOperations(Matrix):
+
+class MatrixOperations(Matrix, ABC):
     def __init__(self, matrix, newMatrix, matrixsize):
         super().__init__(matrix, matrixsize)
         self.matrixB = newMatrix
+
+    def printMatrix(self):
+        for entry in self.matrixB:
+            print(entry)
+        pass
 
     def addition(self, stat):
         """print('Mat A')

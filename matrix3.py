@@ -3,15 +3,19 @@
 # ketemu kalau pake logika pengulangan
 # lagian juga modul matrix2 nya udah hampir lebih 100 baris
 import function
-from matrix2 import Matrix, Abstract
+from matrix2 import Matrix
 from function import unpack, detstep1
 
 
-class ThreeByThreeMethod(Matrix, Abstract):
+class ThreeByThreeMethod(Matrix):
     def __init__(self, matrix, sizematrix):
         super().__init__(matrix, sizematrix)
         self.matrox = unpack(self.mainMatrix)
         pass
+
+    def printMatrix(self):
+        for entry in self.mainMatrix:
+            print(entry)
 
     def transpose(self):
         for x in range(len(self.mainMatrix[0])):  # range dari suatu baris atau kolom, bukan matriks secara keseluruhan
@@ -68,4 +72,8 @@ class ThreeByThreeMethod(Matrix, Abstract):
             subs -= subproduct[x]
         pass
         return sum(product) + subs
+
+    def writeToTxt(self):
+        pass
+
     pass
