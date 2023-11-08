@@ -10,6 +10,16 @@ def unpack(mat):
     pass
 
 
+def pack(mat):
+    M = []
+    root = int(math.sqrt(len(mat)))
+    for x in range(root):
+        M.append(mat[:root])
+        for y in range(root):
+            mat.pop(0)
+    return M
+
+
 def inputMain(size):
     value = []
     print(f'Matrix A ({size} x {size})\n-----')
