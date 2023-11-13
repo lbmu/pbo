@@ -37,67 +37,41 @@ class VectorOperations(Vector):
 
     def crossProduct(self):
         cross = function.detVector(self.vectorA, self.vectorB)
+        # print(cross)
         for x in cross:
             print(x)
-        # print(len(cross[0]))
         res = 1
         det = []
         detnet = []
-        for x in range(2):
-            if x < len(cross):
-                # print(cross[x][x+1], end=' ')
-                res *= cross[x][x + 1]
-        det.append(res)
-        res = 1
-        for x in range(2):
-            if x < len(cross):
-                # print(res, cross[x][x+2], end=' ')
-                res *= cross[x][x + 2]
-        det.append(res)
-        res = 1
-        for x in range(2):
-            if x < len(cross):
-                # print(cross[x][x+1], end=' ')
-                res *= cross[x][x + 3]
-        det.append(res)
-        # print(res)
-        pass
+        i = 1
+        while i <= 3:
+            for x in range(2):
+                # print(cross[x][x+i], end=' ')
+                res *= cross[x][x + i]
+            det.append(res)
+            i += 1
+            res = 1
+            pass
         print(det)
-        res = 1
-        stepdown = 2
-        for x in range(2):
-            if x < len(cross):
-                # print(res, cross[x][x+2], end=' ')
-                stepdown -= 1
-                res *= cross[x][stepdown]
-        detnet.append(res)
-        res = 1
-        stepdown = 3
-        for x in range(2):
-            if x < len(cross):
-                # print(res, cross[x][x+2], end=' ')
-                stepdown -= 1
-                res *= cross[x][stepdown]
-        detnet.append(res)
-        res = 1
-        stepdown = 4
-        for x in range(2):
-            if x < len(cross):
-                # print(res, cross[x][x+2], end=' ')
-                stepdown -= 1
-                res *= cross[x][stepdown]
-        detnet.append(res)
-        finalProduct = []
-        for x in range(3):
-            # print(det[x])
-            opera = det[x] + detnet[x]
-            print(opera)
-            finalProduct.append(opera)
+        i = 1
+        while i <= 3:
+            y = i
+            for x in range(2):
+                # print(cross[x][y], end=' ')
+                res *= cross[x][y]
+                y -= 1
+            detnet.append(res)
+            i += 1
+            res = 1
+            pass
         print(detnet)
+        finalProduct = (det[0] - detnet[1],
+                        det[1] - detnet[2],
+                        det[2] - detnet[0],
+                        )
         print(f'({finalProduct[0]})i + '
               f'({finalProduct[1]})j + '
               f'({finalProduct[2]})k')
-        pass
 
     def cosAngle(self, size):
         num = self.dotProduct(size)

@@ -4,7 +4,7 @@
 # lagian juga modul matrix2 nya udah hampir lebih 100 baris
 import function
 from matrix2 import Matrix
-from function import unpack, detstep1
+from function import unpack
 
 
 class ThreeByThreeMethod(Matrix):
@@ -35,43 +35,35 @@ class ThreeByThreeMethod(Matrix):
 
     def determinant(self):
         product = []
-        subproduct = []
         function.detstep1(self.mainMatrix)
-        res = 1
-        for i in range(3):
-            res *= self.mainMatrix[i][i]
-        product.append(res)
-        res = 1
-        for i in range(3):
-            res *= self.mainMatrix[i][i + 1]
-        product.append(res)
-        res = 1
-        for i in range(3):
-            res *= self.mainMatrix[i][i + 2]
-        product.append(res)
-        res = 1
-        stepdown = 3
-        for i in range(3):
-            stepdown -= 1
-            res *= self.mainMatrix[i][stepdown]
-        subproduct.append(res)
-        res = 1
-        stepdown = 4
-        for i in range(3):
-            stepdown -= 1
-            res *= self.mainMatrix[i][stepdown]
-        subproduct.append(res)
-        res = 1
-        stepdown = 5
-        for i in range(3):
-            stepdown -= 1
-            res *= self.mainMatrix[i][stepdown]
-        subproduct.append(res)
-        subs = 0
-        for x in range(len(subproduct)):
-            subs -= subproduct[x]
-        pass
-        return sum(product) + subs
+        for x in self.mainMatrix:
+            print(x)
+        i = 0
+        while i < 3:    # Jujur ngga pake ChatGPT
+            j = i       # Cuman bengong abis makan indomie ayam bawang
+            res = 1
+            for x in range(3):
+                # print(q[x][j], end=' | ')
+                res *= self.mainMatrix[x][j]
+                j += 1
+            i += 1
+            product.append(res)
+        i = 2           # tiba-tiba logikanya dapet
+        while i < 5:    # lumayan hemat 8 baris
+            j = i       # probably
+            res = 1
+            for x in range(3):
+                # print(q[x][j], end=' | ')
+                res *= self.mainMatrix[x][j]
+                j -= 1
+            i += 1
+            product.append(res)
+        total = 0
+        for x in range(3):
+            total += product[x]
+        for x in range(3, 6):
+            total -= product[x]
+        return total
 
     def writeToTxt(self):
         pass
