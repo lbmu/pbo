@@ -10,31 +10,20 @@ def unpack(mat):
     pass
 
 
-def pack(mat):
-    M = []
-    root = int(math.sqrt(len(mat)))
-    for x in range(root):
-        M.append(mat[:root])
-        for y in range(root):
+# anjing baris sama kolomnya kebalik
+# pake kertas crew, pake ChatGPT cari cara bikin expresi sama sintaks
+def packed(mat, row, col):
+    newmat = []
+    for x in range(row):
+        newmat.append(mat[:col])
+        for y in range(col):
             mat.pop(0)
-    return M
+    return newmat
 
 
 def inputMain(size):
     value = []
     print(f'Matrix A ({size} x {size})\n-----')
-    for i in range(size):
-        rowValue = []
-        for j in range(size):
-            rowValue.append(float(input(f'Entry {i} {j} = ')))
-        value.append(rowValue)
-    return value
-    pass
-
-
-def inputAux(size):
-    value = []
-    print(f'Matrix B')
     for i in range(size):
         rowValue = []
         for j in range(size):
